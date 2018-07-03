@@ -1,0 +1,27 @@
+{
+  "name": "ag.front-end.test",
+  "description": "Test for Front End developer",
+  "main": "test.html",
+  "moduleType": [],
+  "authors": [
+    "AuthenticGaming"
+  ],
+  "license": "MIT",
+  "homepage": "www.authenticgaming.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "lib/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "latest",
+    "require-css": "latest",
+    "requirejs-text": "latest",
+    "jquery": "~1.x.x",
+    "jquery-ui": "~1.11.x"
+  }
+}

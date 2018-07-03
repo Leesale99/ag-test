@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Authentic Gaming - Front End Developer Test</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <style>
+        #fouc {
+            display: none;
+        }
+    </style>
+    <script src="lib/requirejs/require.js"></script>
+    <script src="conf/require.js"></script>
+</head>
+
+<body id="fouc">
+    <div class="loader">
+        <div class="loaderCircle"></div>
+    </div>
+    <div id="dialog" title="Missing search term">
+        <p>Please provide a search term.</p>
+    </div>
+
+    <div class="searchForm">
+        <header class="searchFormHeader">
+            <div class="searchFormAction">
+                <input class="searchText" type="text" placeholder="Search parameter">
+                <button class="searchButton" type="submit">Search</button>
+            </div>
+        </header>
+
+        <div class="searchFormResultWrappper">
+            <div class="overlay loaded">
+                <div class="overlayAnimatedBackground">
+                    <div class="overlayMasker"></div>
+                    <div class="overlayMasker"></div>
+                    <div class="overlayMasker"></div>
+                    <div class="overlayMasker"></div>
+                    <div class="overlayMasker"></div>
+                    <div class="overlayMasker"></div>
+                    <div class="overlayMasker"></div>
+                    <div class="overlayMasker"></div>
+                    <div class="overlayMasker"></div>
+                    <div class="overlayMasker"></div>
+                    <div class="overlayMasker"></div>
+                    <div class="overlayMasker"></div>
+                    <div class="overlayMasker"></div>
+                    <div class="overlayMasker"></div>
+                    <div class="overlayMasker"></div>
+                    <div class="overlayMasker"></div>
+                    <div class="overlayMasker"></div>
+                    <div class="overlayMasker"></div>
+                    <div class="overlayMasker"></div>
+                    <div class="overlayMasker"></div>
+                    <div class="overlayMasker"></div>
+                    <div class="overlayMasker"></div>
+                    <div class="overlayMasker"></div>
+                    <div class="overlayMasker"></div>
+                    <div class="overlayMasker"></div>
+                    <div class="overlayMasker"></div>
+                    <div class="overlayMasker"></div>
+                    <div class="overlayMasker"></div>
+                    <div class="overlayMasker"></div>
+                    <div class="overlayMasker"></div>
+                    <div class="overlayMasker"></div>
+                    <div class="overlayMasker"></div>
+                    <div class="overlayMasker"></div>
+                    <div class="overlayMasker"></div>
+                </div>
+            </div>
+            <h1 class="searchTitle">Please provide a search parameter to begin searching.</h1>
+            <table class="searchFormResult hidden">
+                <thead>
+                    <tr>
+                        <td>Date</td>
+                        <td>Message</td>
+                        <td>Casino</td>
+                        <td>Table</td>
+                        <td>Table Type</td>
+                        <td>Details</td>
+                    </tr>
+                </thead>
+                <tbody class="searchFormResultContainer">
+                    <tr class="searchFormResultTemplate">
+                        <td class="searchFormResultDate"></td>
+                        <td class="searchFormResultMessage"></td>
+                        <td class="searchFormResultCasino"></td>
+                        <td class="searchFormResultTable"></td>
+                        <td class="searchFormResultTableType"></td>
+                        <td class="searchFormResultDetails"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer></footer>
+
+    <script type="text/javascript">
+        require(['jquery', 'jquery-ui', 'js/search-form'],
+            function ($, _, SearchForm) {
+                var searchForm = new SearchForm({
+                    container: $('.searchForm')
+                });
+                $('#dialog').dialog({
+                    autoOpen: false,
+                    modal: true,
+                    buttons: {
+                        'Ok': function () {
+                            $(this).dialog("close");
+                        }
+                    },
+                });
+                searchForm.search();
+                $('#fouc').show();
+                setTimeout(function () {
+                    $('.loader').addClass('loaded');
+                }, 500);
+            });
+    </script>
+
+</body>
+
+</html>
