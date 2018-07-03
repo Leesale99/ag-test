@@ -124,6 +124,8 @@ define([
       var thisInstance = this;
       this.$searchResultContainer.click(function(e) {
         var target = e.target;
+        if (!$(target).hasClass('logButton')) return;
+
         var id = $(target).data('id');
         var log = thisInstance.itemsLog[id];
         thisInstance.$dialog.find('p').text(log);
