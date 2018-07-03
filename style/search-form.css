@@ -78,7 +78,7 @@ button.smallButton {
 
 .searchFormHeader {
   grid-area: header;
-  padding: 2rem;
+  padding: 2rem 1.5rem;
   background: #fff;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
 }
@@ -116,7 +116,7 @@ button.smallButton {
   position: relative;
   height: 100%;
   width: 100%;
-
+  overflow-x: scroll;
   min-height: 100vh;
 }
 
@@ -137,6 +137,10 @@ button.smallButton {
   border: none;
   padding-bottom: 1rem;
   font-size: 1.3rem;
+}
+
+.searchFormResult thead > tr > td:last-child {
+  text-align: center;
 }
 
 .searchFormResultMessage {
@@ -307,12 +311,24 @@ footer {
 
 @media only screen and (max-width: 1200px) {
   .searchForm {
-    grid-template-columns: 1fr 96rem 1fr;
+    grid-template-columns: 1fr 100% 1fr;
+  }
+
+  .searchFormResultWrappper {
+    margin: 0 1.5rem;
+    width: auto;
   }
 }
 
 @media only screen and (max-width: 992px) {
-  .searchForm {
-    grid-template-columns: 1fr auto 1fr;
+  .searchTitle {
+    margin-top: 10rem;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .ui-dialog {
+    width: 95% !important;
+    margin: 0 auto !important;
   }
 }

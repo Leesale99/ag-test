@@ -35,6 +35,7 @@ define([
         e.preventDefault();
         var searchText = thisInstance.$searchText.val();
         thisInstance.loading();
+
         if (!searchText) {
           thisInstance.$dialog.find('p').text('Please provide a search term.');
           thisInstance.$dialog.dialog({
