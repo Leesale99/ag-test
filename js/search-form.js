@@ -122,8 +122,9 @@ define([
         this.$searchResultContainer.append($resultRow);
       }
       var thisInstance = this;
-      $('.logButton').click(function() {
-        var id = $(this).data('id');
+      this.$searchResultContainer.click(function(e) {
+        var target = e.target;
+        var id = $(target).data('id');
         var log = thisInstance.itemsLog[id];
         thisInstance.$dialog.find('p').text(log);
         thisInstance.$dialog.dialog({
