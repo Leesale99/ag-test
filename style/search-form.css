@@ -116,7 +116,6 @@ button.smallButton {
   position: relative;
   height: 100%;
   width: 100%;
-  overflow-x: scroll;
   min-height: 100vh;
 }
 
@@ -323,6 +322,12 @@ footer {
 @media only screen and (max-width: 992px) {
   .searchTitle {
     margin-top: 10rem;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .searchFormResultWrappper {
+    overflow-x: scroll;
   }
 }
 
